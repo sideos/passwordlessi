@@ -1,0 +1,51 @@
+tr.sideos_did td input,
+tr.sideos_token td input,
+tr.sideos_template td input
+  {
+    width: 60%!important;
+}
+
+#ssiqrcode canvas {
+    margin: 0 auto;
+    display: block;
+}
+
+section.sideosssi img {
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+}
+
+section.sideosssi {
+    margin-bottom: 20px;
+    border: 1px solid #505050;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.blurred {
+    filter: blur(4px);
+}
+
+.help {
+    padding-bottom: 10px;
+    font-style: italic;
+}
+
+#showtoken {
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 17px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.separator {
+    border-top: 1px solid #808080;
+    display: block;
+    height: 2px;
+}
+
+.instruction {
+    margin: 10px 0;
+}

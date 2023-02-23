@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Configuration Needed"
+msgstr "Konfiguration notwendig"
+
+msgid "SSI Options"
+msgstr "SSI Einstellungen"
+
+msgid "These are the settings to connect this instance with the Juno account"
+msgstr "Mit diesen Einstellungen wird das Plugin mit einem Juno Account verknüpft"
+
+msgid "Select a user to send a credential"
+msgstr "Benutzer für den Empfang der Zugangsdaten auswählen"
+
+msgid "SSI Sideos Token"
+msgstr "SSI Sideos Token"
+
+msgid "Disable Username/Password submit form"
+msgstr "Deaktivieren der Benutzername/Passwort Eingabe"
+
+msgid "hide/show"
+msgstr "Ausblenden/Anzeigen"
+
+msgid "Could not send credential"
+msgstr "Kann die Zugangsdaten nicht versenden"
+
+msgid "Credential sent..."
+msgstr "Zugangsdaten versandt..."
+
+msgid "Make sure you understand what this option does before disabling username/password login."
+msgstr "Stellen Sie sicher, dass Sie verstehen, was diese Einstellung bewirkt, bevor Sie die Benutzername/Passwort Anmeldung deaktivieren."
+
+msgid "This is the Juno platform Token. Keep it safe."
+msgstr "Dies ist der Token für die Juno Plattform. Verwahren Sie ihn sicher."
+
+msgid "This is your Digital Identifier and you can find it in the Juno Platform"
+msgstr "Dies ist die digitale ID des Juno Accounts. Sie finden sie in der Juno Plattform."
+
+msgid "This is the ID for the WordpressLogin template."
+msgstr "Dies ist die ID des WordpressLogin Teamplates."
+
+msgid "This is the proxy to help you set up the passwordless login. You can create your own proxy, see <a href=\"https://docs.sideos.io\">documentation</a> for that."
+msgstr "Dies ist der Poxy Service für das passwortlose Login. Sie können einen eigenen Proxy entwickeln, mehr Informationen dazu unter <a href=\"https://docs.sideos.io\">Dokumentation</a> "
+
+msgid "Send Credential"
+msgstr "Zugangsdaten versenden"
+
+msgid "The selected user will receive at his/her email a credential offer to access this WordPress website. It lasts only 1 day so let them know."
+msgstr "Die Aktivierungsdaten für den Zugang zu Wordpress Webeseit werden an den ausgewählten Benutzer versandt. Sie sind für 1 Tag gültig."
+
+msgid "Make sure to check this box, to give credits!"
+msgstr "Hier netterweise klicken, um Sideos am Login zu erwähnen"
+
+msgid "%d pages."
+msgid_plural "%d Seiten gelesen."
+msgstr[0] "Eine Seite wurde gelesen."
+msgstr[1] "%d Seiten wurden gelesen."
