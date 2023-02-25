@@ -16,6 +16,8 @@ if (!function_exists('sideos_admin_scripts')) {
 		// Styles ************** 
 		wp_enqueue_style( 'custom-login', plugin_dir_url( __FILE__ ).'/styles/ssilogin.css' );
 	}
+	add_action( 'admin_enqueue_scripts', 'sideos_admin_scripts' );
+
 }
 
 if (!function_exists('sideos_frontend_scripts')) { 
@@ -30,6 +32,8 @@ if (!function_exists('sideos_frontend_scripts')) {
 		// Styles ************** 
 		wp_enqueue_style( 'custom-login', plugin_dir_url( __FILE__ ).'/styles/ssilogin.css' );
 	}
+	add_action( 'wp_enqueue_scripts', 'sideos_frontend_scripts' );
+
 }
 
 if (!function_exists('sideos_login_scripts')) { 
@@ -43,10 +47,6 @@ if (!function_exists('sideos_login_scripts')) {
 
 		wp_enqueue_style( 'custom-login', plugin_dir_url( __FILE__ ).'/styles/ssilogin.css' );
 	}
+	add_action( 'login_enqueue_scripts', 'sideos_login_scripts' );
 }
 
-add_action( 'admin_enqueue_scripts', 'sideos_admin_scripts' );
-add_action( 'wp_enqueue_scripts', 'sideos_frontend_scripts' );
-add_action( 'login_enqueue_scripts', 'sideos_login_scripts' );
-
- 
