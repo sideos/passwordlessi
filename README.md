@@ -48,7 +48,7 @@ Yes you can however it relies on a Proxy Server managed by Sideos GmbH. If you w
 
 ### Where can I submit my plugin feedback? 
 
-Feedback is encouraged and much appreciated, especially since this plugin is a small use case of waht SSI is capable of. If you have suggestions or requests for new features, you can [submit them as an issue in the Sideos GitHub repository](https://github.com/sideos/wp-ssi-login). 
+Feedback is encouraged and much appreciated, especially since this plugin is a small use case of waht SSI is capable of. If you have suggestions or requests for new features, you can [submit them as an issue in the Sideos GitHub repository](https://github.com/sideos/passwordlessi). 
 
 == Changelog ==
 
