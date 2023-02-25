@@ -20,7 +20,7 @@ class SideosAdminUI {
         if (!current_user_can('edit_user', $userId)) {
             return;
         }
-        update_user_meta($userId, 'did', $_REQUEST['did']);
+        update_user_meta($userId, 'did', sanitize_text_field($_REQUEST['did']));
     }
     
     function initUI() {

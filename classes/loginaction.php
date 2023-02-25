@@ -11,19 +11,28 @@ class SideosLoginAction {
                 exit();
             }
             // Automatic login //
-            $challenge = $_POST['challenge'];
-            $ch = curl_init("$SIDEOS_URL/user/$challenge");
-            curl_setopt($ch, CURLOPT_HTTPHEADER, [
-                'X-Token:' . $TOKEN,
-                'Content-Type:application/json'
-            ]);	
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $result = curl_exec($ch);
-            $obj = json_decode($result, true);
+            $challenge = sanitize_text_field($_POST['challenge']);
+
+            $args = array(
+                'headers' => array(
+                    'X-Token' => $TOKEN,
+                    'Content-Type' => 'application/json'
+                )
+            );
+            $response = wp_remote_get( "$SIDEOS_URL/user/$challenge", $args );
+            $http_code = wp_remote_retrieve_response_code( $response );
+
+            if ($http_code !== 200) {
+                echo json_encode(array('error_code'=>1));
+                exit();
+            }
+
+            $body = wp_remote_retrieve_body( $response );
+
+            $obj = json_decode($body, true);
             $obj = json_decode($obj['response'], true);
             $vc = $obj['verifiableCredential'][0];
             $cs = $vc['credentialSubject'];
-            curl_close($ch);
 
             if ($vc['issuer']['id'] === get_option('did') && $cs['website'] === get_site_url()) {
                 $user = get_user_by('email', $cs['email'] );

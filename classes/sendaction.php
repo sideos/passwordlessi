@@ -13,29 +13,26 @@ class SideosSendAction {
                 exit();
             }
             $postParameter = array(
-                'name' => $_POST['name'],
-                'email' => $_POST['email'],
+                'name' => sanitize_text_field($_POST['name']),
+                'email' => sanitize_text_field($_POST['email']),
                 'website' => get_site_url(),
                 'templateID' => $TEMPLATEID
             );
-            
-            $ch = curl_init("$SIDEOS_URL/send");
-            curl_setopt($ch, CURLOPT_HTTPHEADER, [
-                'X-Token: ' . $TOKEN,
-                'Content-Type:application/json'
-            ]);	
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POST, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($postParameter));	
-            $result = curl_exec($ch);
-            $statusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            if ($statusCode == 200) {
-                echo json_encode(array('error_code'=>0));
-            } else {
+
+            $args = array(
+                'headers' => array(
+                    'X-Token' => $TOKEN,
+                    'Content-Type' => 'application/json'
+                ),
+                'body' => wp_json_encode( $postParameter )
+            );
+            $response = wp_remote_post( "$SIDEOS_URL/send", $args );
+            $http_code = wp_remote_retrieve_response_code( $response );
+            if ($http_code !== 200) {
                 echo json_encode(array('error_code'=>1));
+                exit();
             }
-            curl_close($ch);
-            
+            echo json_encode(array('error_code'=>0));
         } catch(Exception $e) {
             echo json_encode(array('error_code'=>1));
         }
